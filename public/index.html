@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/tsec_logo_light.png" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple_icon_light.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#14183d" />
+  <meta name="description" content="TSEC WebApp created by Nilesh" />
+  <!-- Import Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>TSEC WebApp</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('worker.js').then(function (registration) {
+          console.log('Worker registration successful', registration.scope);
+        }, function (err) {
+          console.log('Worker registration failed', err);
+        }).catch(function (err) {
+          console.log(err);
+        });
+      });
+    } else {
+      console.log('Service Worker is not supported by browser.');
+    }
+  </script>
+</body>
+
+</html>
