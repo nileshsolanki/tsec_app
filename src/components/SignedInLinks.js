@@ -18,6 +18,9 @@ const SignedInLinks = (props) => {
             {profile.type === 'teacher' && <NavLink to="/create">Create</NavLink>}
             <NavLink to="/" onClick={signout}>Sign Out</NavLink>
             <NavLink to="/"><Button floating className="red" waves="light">{shortname[0][0]} {shortname[1][0]}</Button></NavLink>
+            <a className="black" href="https://github.com/nileshsolanki/tsec_app">
+                <img style={{ margin: 'auto', verticalAlign: 'middle' }} src={process.env.PUBLIC_URL + "/github.png"} height="85%" alt="GitHub" />
+            </a>
         </Navbar>
     )
 }

@@ -9,6 +9,10 @@ This is a web app for a school college to provide one way communication between 
 <li>Media
 <li>Rich Text
 
+### Credentials for testing on https://tsecwebapp.netlify.com
+<li>student login => username: nilesh           password: nilesh123456
+<li>teacher login => username: drnilesh         password: nilesh123456
+
 ### screenshots
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
