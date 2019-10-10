@@ -1,10 +1,10 @@
-const years = ['FE', 'SE', 'TE', 'BE']
-const branches = ['Computer', 'IT', 'EXTC', 'Chemical', 'Bio-Medical', 'Bio-Technology']
-const fe_divs = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-const comps_divs = ['C1', 'C2']
-const it_divs_se = ['S1', 'S2']
-const it_divs_te = ['T1', 'T2']
-const it_divs_be = ['B1', 'B2']
+const years = ['Select', 'FE', 'SE', 'TE', 'BE']
+const branches = ['Select', 'Computer', 'IT', 'EXTC', 'Chemical', 'Bio-Medical', 'Bio-Technology']
+const fe_divs = ['Select', 'A', 'B', 'C', 'D', 'E', 'F', 'G']
+const comps_divs = ['Select', 'C1', 'C2']
+const it_divs_se = ['Select', 'S1', 'S2']
+const it_divs_te = ['Select', 'T1', 'T2']
+const it_divs_be = ['Select', 'B1', 'B2']
 
 
 export const getYears = () => {

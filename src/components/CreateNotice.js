@@ -22,9 +22,9 @@ class CreateNotice extends Component {
         files: [],
         isSubmitClickable: true,
         addGroup: {
-            year: 'FE',
-            branch: 'Computer',
-            div: 'C1'
+            year: 'Select',
+            branch: 'Select',
+            div: 'Select'
         }
     }
 
@@ -62,15 +62,37 @@ class CreateNotice extends Component {
         const { addGroup } = this.state
         const { uid, classgroups } = this.props
 
+
         //exit if group already exists
-        for (let i = 0; i < classgroups.length; i++) {
-            const group = classgroups[i].value
-            if (group.year === 'FE' && addGroup.year === group.year && addGroup.div === group.div)
-                return M.toast({ html: 'Group already Exists!' })
-            else if ((group.branch === 'Computer' || group.branch === 'IT') && group.branch === addGroup.branch && group.year === addGroup.year && group.div === addGroup.div)
-                return M.toast({ html: 'Group already Exists!' })
-            else if (group.year === addGroup.year && group.branch === addGroup.branch)
-                return M.toast({ html: 'Group already Exists!' })
+        if (classgroups) {
+
+            for (let i = 0; i < classgroups.length; i++) {
+                const group = classgroups[i].value
+                if (group.year === 'FE' && addGroup.year === group.year && addGroup.div === group.div)
+                    return M.toast({ html: 'Group already Exists!' })
+                else if ((group.branch === 'Computer' || group.branch === 'IT') && group.branch === addGroup.branch && group.year === addGroup.year && group.div === addGroup.div)
+                    return M.toast({ html: 'Group already Exists!' })
+                else if (group.year === addGroup.year && group.branch === addGroup.branch)
+                    return M.toast({ html: 'Group already Exists!' })
+            }
+        }
+
+
+        if (addGroup.year === 'Select') {
+            return M.toast({ html: 'Please select &nbsp; <b>YEAR</b>' })
+        } else if (addGroup.year === 'FE') {
+            if (addGroup.div === 'Select') {
+                return M.toast({ html: 'Please select  &nbsp; <b>DIVISION</b>' })
+            }
+        } else {
+            if (addGroup.branch === 'Select') {
+                return M.toast({ html: 'Please select  &nbsp; <b>BRANCH</b>' })
+            }
+            else if (['IT', 'Computer'].includes(addGroup.branch)) {
+                if (addGroup.div === 'Select') {
+                    return M.toast({ html: 'Please select  &nbsp; <b>DIVISION</b>' })
+                }
+            }
         }
 
         this.props.createGroup({ group: addGroup, uid })
@@ -89,9 +111,31 @@ class CreateNotice extends Component {
 
     handleGroupSelectChange = (property, event) => {
         const value = event.nativeEvent.target.value
-        this.setState({
-            addGroup: { ...this.state.addGroup, [property]: value }
-        })
+
+        let addGroup = { ...this.state.addGroup }
+        switch (property) {
+            case 'year':
+                addGroup.year = value
+                addGroup.branch = 'Select'
+                addGroup.div = 'Select'
+                break
+
+            case 'branch':
+                addGroup.branch = value
+                addGroup.div = 'Select'
+                break
+
+            case 'div':
+                addGroup.div = value
+                break
+
+            default:
+                break
+
+        }
+
+
+        this.setState({ addGroup })
     }
 
 
