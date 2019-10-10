@@ -14,6 +14,96 @@ body {
 }
 
 
+ul.dropdown-content li span {
+  color: #14183d;
+}
+
+#richTextModal {
+  min-height: 100%;
+}
+
+#addGroupModal {
+  min-height: 80%;
+}
+
+ul.tabs li a {
+  color: #14183d !important;
+}
+
+div.row div {
+  height: 300px;
+}
+
+li.indicator {
+  background-color: #14183d !important;
+}
+
+.dzu-dropzone {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.logo-left {
+  padding-left: 2%;
+}
+
+.primaryColor{
+  background-color: #14183d;
+}
+
+
+.datepicker-table td.is-today button.datepicker-day-button {
+  font-weight: bold;
+  color: #14183d
+}
+
+
+.datepicker-table td.is-selected button.datepicker-day-button {
+  background-color: #14183d !important;
+  color: white;
+}
+
+.datepicker-date-display{
+  background-color: #14183d !important;
+}
+
+.datepicker-cancel, .datepicker-done {
+  color: #14183d !important;
+}
+
+.btn {
+  background-color: #14183d !important;
+  color: white !important;
+  margin-bottom: 8px;
+}
+
+
+.dzu-submitButton {
+  visibility: hidden;
+}
+
+/* materialize accents */
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: #14183d !important;
+  box-shadow: 0 1px 0 0 #14183d !important;
+}
+
+
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+  color: #14183d !important;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
