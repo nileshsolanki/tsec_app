@@ -48,7 +48,8 @@ class CreateNotice extends Component {
     }
 
     handleTabChange = (index) => {
-        this.setState({ activeTab: `tab_${index}` })
+        console.log("index", index)
+        this.setState({ activeTab: index % 10 })
     }
 
     handlePlainTextChange = (e) => {
@@ -68,11 +69,11 @@ class CreateNotice extends Component {
 
             for (let i = 0; i < classgroups.length; i++) {
                 const group = classgroups[i].value
-                if (group.year === 'FE' && addGroup.year === group.year && addGroup.div === group.div)
+                if (addGroup.year === 'FE' && addGroup.year === group.year && addGroup.div === group.div)
                     return M.toast({ html: 'Group already Exists!' })
-                else if ((group.branch === 'Computer' || group.branch === 'IT') && group.branch === addGroup.branch && group.year === addGroup.year && group.div === addGroup.div)
+                else if ((addGroup.branch === 'Computer' || addGroup.branch === 'IT') && (group.branch === addGroup.branch) && (group.year === addGroup.year) && (group.div === addGroup.div))
                     return M.toast({ html: 'Group already Exists!' })
-                else if (group.year === addGroup.year && group.branch === addGroup.branch)
+                else if ((addGroup.branch !== 'Computer' && addGroup.branch !== 'IT') && (group.year === addGroup.year) && (group.branch === addGroup.branch))
                     return M.toast({ html: 'Group already Exists!' })
             }
         }
@@ -214,7 +215,7 @@ class CreateNotice extends Component {
 
         //check which tab is active and start processing
         switch (activeTab) {
-            case 'tab_50':
+            case 0:
                 //rich text
 
                 //disable push button before processing
@@ -239,7 +240,7 @@ class CreateNotice extends Component {
 
                 return
 
-            case 'tab_51':
+            case 1:
                 //plain text
                 const { plainText } = this.state
                 this.props.createTextNotice({
@@ -256,7 +257,7 @@ class CreateNotice extends Component {
 
                 return
 
-            case 'tab_52':
+            case 2:
                 //media
                 const files = this.state.files
                 const filesTobeRemoved = this.dropzone.current.files.map(f => f)
