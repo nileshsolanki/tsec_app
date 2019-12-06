@@ -7,6 +7,7 @@ const storageReducer = (state = initState, action) => {
     switch (action.type) {
         case 'ERROR_DOWNLOADING_FILE':
             console.log('error fetching url')
+            console.log('message', action.err)
             return {
                 ...state,
                 url: null

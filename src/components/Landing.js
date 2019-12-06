@@ -25,7 +25,7 @@ function Landing({ auth, profile }) {
                 <div className="col s12 m5">
                     <img className="responsive-img" src="https://assets-ouch.icons8.com/preview/959/94ded397-fd13-4b9c-9e6d-5ab45154d716.png" alt="" />
                 </div>
-                <div className="col s12 m6 grey lighten-4" style={containStyle}>
+                <div className="col s11 m6 grey lighten-4" style={containStyle}>
                     <p className="flow-text">Get started...</p>
                     {profile.type === 'teacher' && <Link to="/create"><Button waves="light" className="indigo lighten-1">create</Button></Link>}
                     {!auth.uid && <Link to="/signin"> <Button waves="light" className="indigo darken-3">sign in</Button></Link>}

@@ -8,7 +8,8 @@ export const createGroup = ({ group, uid }) => {
             newGroup = {
                 groupName: `${group.year}-${group.div}`,
                 div: group.div,
-                year: group.year
+                year: group.year,
+                branch: "na"
             }
         }
         else if (group.branch === 'Computer' || group.branch === 'IT') {
@@ -23,7 +24,8 @@ export const createGroup = ({ group, uid }) => {
             newGroup = {
                 groupName: `${group.year}-${group.branch}`,
                 year: group.year,
-                branch: group.branch
+                branch: group.branch,
+                div: "na"
             }
         }
 

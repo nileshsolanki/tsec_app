@@ -16,7 +16,7 @@ class CreateNotice extends Component {
 
     state = {
         editorState: EditorState.createEmpty(),
-        activeTab: 'tab_50',
+        activeTab: 0,
         selectedClass: 0,
         plainText: '',
         files: [],
